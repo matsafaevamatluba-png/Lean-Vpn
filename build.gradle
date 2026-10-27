@@ -1,16 +1,20 @@
-plugins {
-    id 'com.android.application'
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.6.1'
+    }
 }
 
-android {
-    namespace 'com.leanvpn.app'
-    compileSdk 35
-
-    defaultConfig {
-        applicationId 'com.leanvpn.app'
-        minSdk 23
-        targetSdk 35
-        versionCode 1
-        versionName '0.1.0'
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
     }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
